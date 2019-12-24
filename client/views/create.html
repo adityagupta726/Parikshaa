@@ -1,0 +1,138 @@
+<!-- create test -->
+
+<div id=create >
+   
+<div  class="container" >
+       
+       <br><br><br>
+    
+         <div  class="container"  id="Csection1" ng-show="!crudFlag">   
+         <br>
+         <div class="form-group h2"><label for="testName">Test Name:</label><br><input ng-model="test.name" id="testName" class="form-control"  type="text" placeholder="Type Test Name" required="true" title="This is a required field"></div><br>
+         <div class="form-group h2"><label for="testDuration">Test Duration:</label><input ng-model="test.duration" id="testDuration"  class="ml-md-3 px-md-4 " type="time" required title="This is a required field"></div> <br>
+        
+         <div class="form-group h2"><label for="testCategory">Category:</label><br><input ng-model="test.category" id="testCategory" class="form-control" type="text" placeholder="Type Test Category" ></div><br><br>
+        
+         <div  class="text-right " ><button class="btn btn-success" ng-click="showCrud()" id="Tcreate"><strong>Create</strong></button></div> 
+         <br>
+
+        </div>
+ 
+
+
+        <div class="container bcolor" id="Csection2" ng-show="crudFlag">
+          
+            <h1 class="spacing text-center">Create Questions </h1>
+    
+            <br><br>
+
+            <div  class="form-group h3">
+            <label for="name"><strong>Name :</strong></label>
+            <br>
+            <input autocomplete="off" ng-model="ques.name" id="name"  placeholder="Type Question Here" class='form-control smoke' maxlength="200" required><br>
+            </div>
+
+            <br>
+
+            <div  class="form-group ">
+            <h3><label for="option"><strong>Option : </strong></label></h3>
+            <input autocomplete="off" ng-model="ques.opt" id="option" type="text" placeholder="Type Option"  class='form-control smoke' maxlength="50" required><br><button ng-click="addOption()" id="add" class="btn btn-success mr-2"  title="Add Options"><i class="fas fa-plus-square"></i>&nbsp;Add</button>
+           </div>
+
+            <br>
+
+           <div  class="number container">
+            <ul> 
+                <li  ng-repeat="option in ques.options">
+                      
+                   <p class="inline"><span  class=" createopt alert-info h4">{{option}}</span></p>
+                    <button ng-click="removeOption(option)" id="removeOpt"class="btn btn-danger float-right mr-2"role="group"><i class="fas fa-trash-alt"></i>&nbsp;Delete</button><br>
+                    <!-- position-absolute mid-right          -->
+                    <!-- btn-group btn-group-sm  -->
+                    <!-- pull-right -->
+                </li>
+          
+            </ul>
+            </div>
+
+            <br>
+
+            <div class="form-group h3">
+            <label for="correctAns"><strong>Correct Answer :</strong></label><br>
+            <input autocomplete="off" ng-model="ques.correct" id="correctAns" type="text" placeholder="Correct Answer" class="form-control smoke" maxlength="50" required="true">
+            </div>
+
+            <br><br>
+
+            <div class="form-group h3">
+                <label for="id"><strong>Score {{ques.score}}</strong></label>
+                <input min="1" max="10" default="1" ng-model="ques.score" id="score" type="range" class="form-control" required="true">
+            </div>
+
+            <br><br>
+            <div ><button ng-click="addQues()" id="addQues" class="btn btn-success " ><i class="fas fa-plus-square"></i>&nbsp;Add Question</button> <button ng-click="clear()" id="clear" class="btn btn-danger float-right" title="Clear question"><i class="fas fa-ban"></i>&nbsp;Clear</button></div> 
+            <br><br>
+              
+            </div>
+            
+            <br><br>
+
+            <div class="records container bcolor"  ng-show="crudFlag">
+                    <h1 class="spacing text-center">Total Records</h1><br>
+                        
+                     <div class="lighter inline container">
+                         <ul class="container"> 
+                       
+                                 <li ng-repeat="question in questions" >
+
+                                    <div class="smoke">
+
+                                   <div > 
+                                       <h3 id="Qname"> <strong>Question Name:</strong></h3><h4><span class="container">{{question.name}}</span></h4>
+                                   </div>
+
+                                      <div ><h3> <strong>Score:</strong></h3> <h4><span>{{question.score}}</span></h4>
+                                
+                                 <div class=" number" >
+                                        <h3><strong>Options:</strong></h3>
+                                    <ul>
+                                        <li  ng-repeat="option in question.options">
+                                       <span  class="h4"> &nbsp;{{option}}</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            
+                                <h3><strong>Correct Answer:</strong></h3> <h4><span>{{question.correct}}</span></h4><br>
+                                <button ng-click="removeQues(question.name)" class="btn btn-danger" ><i class="fas fa-trash-alt"></i>&nbsp;Delete</button>
+                                <!-- <button ng-click="editQues(question.name)"  class="btn btn-warning" title="Update question"><i class="fas fa-edit"></i>&nbsp;Update</button><br> -->
+                                </div> 
+                                </div>
+                                <br>
+                    
+                                </li>
+                    
+                         </ul>
+                    </div>
+            
+            <br><br>
+
+            <div class="mr-2 text-center"><button  class=" createTest btn btn-success" ng-click="create()">Create Test</button></div>
+
+            <br><br>
+
+        </div> 
+            <br><br>
+
+        </div>
+         
+        </div>
+
+            <style>
+                    body{
+                        background-image: url("./assets/images/pattern6.jpg");
+                        background-repeat: repeat;
+                        background-size: auto;
+                    }
+            </style> 
+          
+        

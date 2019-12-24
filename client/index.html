@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Test App</title>
+    <link rel="stylesheet" href="./bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="shortcut icon" href="https://cdn.iconscout.com/icon/premium/png-256-thumb/test-1601979-1358634.png" type="image/x-icon">
+    
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+     <!-- change -->
+    <script src="https://kit.fontawesome.com/b06605e970.js"></script>                                         
+    
+    <!-- analysis js -->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>                 
+   <!-- <script src="../client/assets/js/analysis.js"></script>  --> 
+    
+    <!-- link constant js and css and images  -->
+    <link rel="stylesheet" href="./assets/css/main.css">
+
+    <script src="./bower_components/angular/angular.min.js"></script>
+    <script src="./bower_components/angular-route/angular-route.min.js"></script>
+    <script src="./scripts/testApp/testModule.js"></script>
+    <script src="./scripts/userApp/userModule.js"></script>
+    <script src="./scripts/rootApp.js"></script>
+    <script src="./scripts/routes.js"></script>
+
+    <script src="./scripts/userApp/userConfig.js"></script>
+    <script src="./scripts/testApp/testConfig.js"></script>
+
+    <script src="./scripts/userApp/models/userOps.js"></script>
+    <script src="./scripts/testApp/models/answerOps.js"></script>
+    <script src="./scripts/testApp/models/testOps.js"></script>
+    <script src="./scripts/testApp/models/reviewOps.js"></script>
+    <script src="./scripts/testApp/models/testDelete.js"></script>
+
+    <script src="./scripts/global/controllers/descriptionCtrl.js"></script>
+    <script src="./scripts/global/controllers/notFoundCtrl.js"></script>
+    <script src="./scripts/testApp/controllers/createCtrl.js"></script>
+    <script src="./scripts/testApp/controllers/attemptCtrl.js"></script>
+    <script src="./scripts/testApp/controllers/reviewCtrl.js"></script>
+    <script src="./scripts/userApp/controllers/authCtrl.js"></script>
+    <script src="./scripts/userApp/controllers/dashboardCtrl.js"></script>
+
+    
+    
+</head>
+<body ng-app="main">
+
+    <header></header>
+    <!-- <div ng-include="'./views/nav.html'"></div> -->
+
+
+    <div ng-view>
+            
+    </div>
+
+    <footer></footer>
+    <!-- <script>
+        angular.bootstrap(document.querySelector("#linker"),["main"])
+    </script> -->
+</body>
+</html>

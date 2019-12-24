@@ -1,0 +1,124 @@
+<!-- login, register user -->
+
+<div id="auth">
+        <div id="banner_1">
+                <div class="snow_large"></div>
+                <div class="snow_medium"></div>
+                <div class="snow_small"></div>
+                <div class="snow_large large_1"></div>
+                <div class="snow_medium medium_1"></div>
+                <div class="snow_small small_1"></div>    
+         
+
+        <div class="container">
+           <div class="row">
+                <div class="col-md-9">
+                     <div id="banner">
+                        <div class="slide">
+
+                        </div>
+                              
+                    </div> 
+                          
+                </div>
+
+                <div class="col-md-3">
+                    <div class="auth">
+                            <div id="Rsection">
+
+                                <h4>{{resp}}</h4><br>
+                                <form name="Reg"  novalidate>
+                                        <label for="username">Username:</label><br>
+                                        <input type="text" name="Rusername" ng-model="userR.username" class='form-control' placeholder="Enter username here" pattern="[a-zA-Z]{5,12}" autofocus autocomplete="off" required><br>
+                                        <span ng-if="Reg.Rusername.$touched && Reg.Rusername.$invalid && Reg.Rusername.$error['required']" style="color: red">Username cannot be blank<br></span>
+                                        <span ng-if="Reg.Rusername.$touched && Reg.Rusername.$invalid && Reg.Rusername.$error['pattern']" style="color: red">Username must be between 5-12 characters<br></span><br>
+                                    
+                                        <label for="password">Password:</label><br>
+                                        <input type="password" name="Rpassword" ng-model="userR.password" class='form-control' placeholder="Enter password here" pattern="[a-zA-Z]{5,20}" required><br>
+                                        <span ng-if="Reg.Rpassword.$touched && Reg.Rpassword.$invalid && Reg.Rpassword.$error['required']" style="color: red">Password cannot be blank<br></span><br>
+                                    
+                                        <label for="Cpassword">Confirm Password:</label><br>
+                                        <input type="password" name="RconfirmPassword" ng-model="userR.confirmPassword" class='form-control' placeholder="Confirm Password" required><br>
+                                        <span ng-if="Reg.RconfirmPassword.$touched && Reg.RconfirmPassword.$invalid && Reg.RconfirmPassword.$error['required']" style="color: red">Password cannot be blank<br></span><br>
+                                        
+                                        <div>
+                                            <label for="email">Email Id:</label><br>
+                                            <input type="email" name="Remail" ng-model="userR.email" class='form-control' placeholder="Enter email id here" ng-pattern="/^[a-z]+[a-z0-9._]+@[a-z]+\.[a-z.]{2,5}$/" required><br>
+                                            <span ng-if="Reg.Remail.$touched && Reg.Remail.$invalid && Reg.Remail.$error['required']" style="color: red">Email id cannot be blank<br></span>
+                                            <span ng-if="Reg.Remail.$touched && Reg.Remail.$invalid && Reg.Remail.$error['pattern']" style="color: red">Email id is invalid<br></span><br>
+                                    
+                                            <label for="role">Role:</label>
+                                            <select name="Rrole" ng-model="userR.role" required>
+                                                <option value="">User Type</option>
+                                                <option value="teacher">Teacher</option>
+                                                <option value="student">Student</option>
+                                            </select><br>
+                                            <span ng-if="Reg.Rrole.$touched && Reg.Rrole.$invalid && Reg.Rrole.$error['required']" style="color: red">Please select a role<br></span> <br>
+                                        </div>
+                                        <span ng-if="Reg.$invalid" style="color: red">Please check/fill all the fields<br><br></span>
+                                 </form>
+                                         
+                                 
+                                </div>
+                                
+                                     <div id="Lsection">
+                                     <form name="Log" novalidate>
+                                        <label for="username">Username:</label>
+                                        <input type="text" name="Lusername" ng-model="userL.username"class='form-control' placeholder="Enter username here" pattern="[a-zA-Z]{5,12}" required autofocus><br>
+                                        <span ng-if="Log.Lusername.$touched && Log.Lusername.$invalid && Log.Lusername.$error['required']" style="color: red">Username cannot be blank<br></span>
+                                        <span ng-if="Log.Lusername.$touched && Log.Lusername.$invalid && Log.Lusername.$error['pattern']" style="color: red">Username must be between 5-12 characters and consist of alphabets only<br></span><br>
+                                    
+                                        <label for="password">Password:</label>
+                                        <input type="password" name="Lpassword" ng-model="userL.password" class='form-control' placeholder="Enter password here" required><br>
+                                        <span ng-if="Log.Lpassword.$touched && Log.Lpassword.$invalid && Log.Lpassword.$error['required']" style="color: red">Password cannot be blank<br></span><br>
+                                    
+                                        <span ng-if="Log.$invalid" style="color: red">Please check/fill all the fields<br><br></span>
+                                     </form>
+                                     </div>
+                                     <button ng-click="login()" id="login" class='btn btn-primary mr-2'>Login</button>
+                                     <button type="button" ng-click="register()" id="register" class="btn btn-primary">Register</button>
+                                         <!-- <button ng-click="register()" id="register" class='btn btn-primary mr-2'>Register</button> -->
+                                        
+                                        <h4>{{resp1}}</h4><br>
+                    </div>         
+                 </div>
+           </div>
+        </div>
+
+        </div>
+</div>
+<style>
+    body{
+        background-image: url("./assets/images/auth.jpg");
+    }
+</style>
+
+            <!-- <script>
+
+                //function -> fun
+                var loginFlag=true
+                $("#auth").ready(function(){
+                    console.log("ready")
+                    $("#register").ready(function() {
+                 $("#section1").slideToggle(50);
+             
+             });
+         $("#register").click(function() {
+                 $("#section2").slideToggle(2000);
+                 $("#section1").slideToggle(2000);
+             
+             });
+             $("#login").click(function() {
+                 $("#section1").slideToggle(2000);
+                 $("#section2").slideToggle(2000);
+             });
+         });
+
+
+         //fun1
+         //log->show, reg->hide showLogin =true
+         //fun2
+         //log->hide, reg->show showLogin =false
+             </script> -->
+
+            

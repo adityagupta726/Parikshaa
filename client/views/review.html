@@ -1,0 +1,81 @@
+<!-- review test -->
+  <style>
+  .corr{
+      background-color:  #E2FFDA  ;
+  }
+  .incorr{
+      background-color:#FEDFDF  ;
+  }
+  
+  </style>
+<div id="review" class="container">   
+  <div class="records container bcolor"  style="background-color:rgba(255,255,255,0.7);">
+     <h1 class=" spacing text-center "><span style="color:red; font-weight: bold; background-color: skyblue; display: block; padding: 10px 0px; border-radius: 2px 2px 100px 100px;">Review Test</span></h1><br>
+  
+  
+     <div class="lighter inline container" >
+          <ul class="container">
+                  <li ng-repeat="question in questions" >
+                      
+                    <div  style="border: 3px solid goldenrod; border-radius: 5px; padding-left: 10px;" ng-class="{corr: question.chosen == question.correct, incorr: question.chosen != question.correct}">
+                            <!-- background-color:rgb(228,249,196) -->
+                    <div> 
+                        <h3 id="Qname"><strong>Question :</strong></h3><h4><span  class="container blue">{{question.name}}</span></h4> 
+                     
+                     <div><h3><strong> Score :</strong></h3><h4><span>{{question.score}}</span></h4>
+                 
+                     <div class="number" >
+                         <h3><strong>Options:</strong></h3>
+                     <ul>
+                         <li ng-repeat="option in question.options">
+                        <span  class=" h4">&nbsp;{{option}}</span>
+                         </li>
+                     </ul>
+                    </div>
+                 <div ng-show="loggedInS">
+                        
+                        <h3><strong>Your Answer:</strong></h3><h4><span class="blue">
+                          {{question.chosen}}
+                        </span></h4><br>
+                 </div>
+                    
+                 <h3><strong>Correct Answer:</strong></h3> <h4><span>{{question.correct}}</span></h4><br>
+              
+                     </div>  
+                     </div>
+                 <br>
+                    </div>
+                 <br>
+                 </li>
+           
+         </ul> 
+    </div>
+    </div>
+    <br><br>
+    
+     <div  ng-show="loggedInS" id="analysis" class="container"  style="background-color:rgba(255,255,255,0.7);" >
+         <div class="container" >
+                <h1 class=" spacing text-center "><span style="color: red;  font-weight: bold; background-color: skyblue; display: block; padding: 10px 0px; border-radius: 2px 2px 100px 100px;">Test Analysis</span></h1><br>
+                <div style="display: flex;">
+            <!-- <div style="background-color:red;"> -->
+                <div class=" piechart " id="piechart_3d" style="width: 800px; height: 350px; border: 2px solid black;">  </div>
+            <!-- </div> -->
+                <div class=" piechart " id="piechart_3d2" style="width: 800px; height: 350px; border: 2px solid black;">  </div>
+            </div>
+         </div>
+       
+        <br>
+
+
+    </div>
+    
+    <br>
+    <a href="#/dashboard"><button style="padding:10px 20px; font-size:20px;margin-bottom: 10px;"class="btn btn-danger float-right">Back</button></a>
+</div>  
+
+<style>
+        body{
+            background-image: url("./assets/images/pattern6.jpg");
+         
+        }
+</style> 

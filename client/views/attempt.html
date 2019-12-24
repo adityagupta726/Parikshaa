@@ -1,0 +1,105 @@
+<!-- attempt test -->
+<div id="attempt">
+    <div class="container">
+            <div class='form-group' ng-show="!revFlag">
+                    <h1 class="heading4">Test</h1>
+                    <div class="timer">
+                            <h3 class="heading5"></h3>
+                            <!-- <img class="bell"src="https://webstockreview.net/images/bell-clipart-animation-5.gif" alt=""> -->
+                            <!-- <span class="">Current Time /</span>
+                            <span class="">Total Time</span> -->
+                            <p>Time Left: <span id="showTime">
+                            </span>
+                            <span>/{{totalHours}}h</span>
+                            <span>{{totalMinutes}}m</span>
+                            <span>{{totalSeconds}}s</span>
+                            </p>
+                             <!-- <p>Time Left:
+                                 <span>{{currentTime}}</span>
+                                 <span>{{hours}}h</span>
+                                 <span>{{minutes}}m</span>
+                                 <span>{{seconds}}s/</span>
+                                
+                             </p> -->
+                    </div>
+
+                         <div class="aques">
+                            <div class='form-group'>
+                                    <!-- <label for="ques">Question</label> -->
+                                    <p class="ques">Q:-{{currentQuestion.name}}</p>
+                          <!-- <li>{{currentQuestion.name}}</li> -->
+                                 </div>
+                                 <div class='form-group'>
+                                    <label for="score" class="score">Score:
+                                        <span>{{currentQuestion.score}}</span>  
+                                    </label>
+                                        
+                                </div>
+
+                                 <div class='form-group'>            
+                                        <ul class="opt">
+                                            <li ng-repeat="option in currentQuestion.options">
+                                                 <input type="radio" name="options" id="ques_{{option}}" ng-model="options" value="{{option.value}}" ng-click="mark(option)">
+                                                    {{option}}
+                                             </li> 
+                                        </ul>
+                                       
+                                     </div>
+                                      
+                                    <div class='buttons'>
+                                        <button ng-click="previous()" id="prev" class='btn btn-primary mr-2'><i class="fas fa-backward"></i> Previous</button>
+                                        <button ng-click="skip()" id="skip" class='btn btn-warning mr-2'><i class="fas fa-eraser"></i> Skip</button>
+                                        <button ng-click="next()" id="next" class='btn btn-danger mr-2'>Next  <i class="fas fa-forward"></i></button>
+                                        <button ng-click="submit()" id="submit" class='btn btn-success mr-2'><i class="fas fa-check-double"></i> Submit</button>
+                                    </div>
+
+                                  
+                         </div>
+                  
+                             
+                
+                    </div>
+                    
+                    <div class="AReview" ng-show="revFlag">
+                        <textarea class="atemptReview" ng-model="review" placeholder="Write your reviews in this section" rows = "5" cols = "50">
+                            
+                     </textarea>
+                     <button ng-click="cancel()" id="cancelReview" class='btn btn-danger mr-2'>Cancel</button>
+                        <button ng-click="sendReview()" id="aReviewsubmit" class='btn btn-success mr-2'>Submit</button>
+                    
+                    </div>
+    </div>
+    <!-- {{questions}} -->
+</div>
+<style>
+        body{
+            background-image: url("./assets/images/auth.jpg");
+            height: auto;
+            overflow: none;
+        }
+    </style>
+<script>
+
+    // angular.bootstrap(document.querySelector("#attempt"),["testApp"])
+    $("#dashboard").ready(function(){
+        // console.log("ready")
+        $("#submit").click(function() {
+     $(".atemptReview").slideDown(250);
+ })
+ $("#submit").click(function() {
+     $("#aReviewsubmit").slideDown(250);
+ })
+ $("#submit").click(function() {
+     $("#cancelReview").slideDown(250);
+ })
+ $("#submit").click(function() {
+     $(".buttons").slideUp(250);
+ })
+ $("#submit").click(function() {
+     $(".aques").slideUp(250);
+ })
+ $("#submit").click(function() {
+     $(".timer").slideUp(250);
+ })
+ });
+</script>
